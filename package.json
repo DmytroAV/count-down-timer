@@ -1,24 +1,30 @@
 {
-  "name": "parcel-project-template",
+  "name": "count-down-timer",
   "version": "2.0.0",
   "description": "",
-  "homepage": "https://goitacademy.github.io/parcel-project-template",
+  "homepage": "https://github.com/DmytroAV/count-down-timer.git",
   "scripts": {
     "start": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /parcel-project-template/"
+    "build": "parcel build src/*.html --public-url /count-down-timer/"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/goitacademy/parcel-project-template.git"
+    "url": "git+https://github.com/DmytroAV/count-down-timer.git"
   },
   "keywords": [],
-  "author": "Alexander Repeta <alexander.repeta@gmail.com>",
+  "author": "Dmytro Velkov <dmytrovelkov@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/goitacademy/parcel-project-template/issues"
+    "url": "https://github.com/DmytroAV/count-down-timer/issues"
   },
   "dependencies": {
-    "modern-normalize": "^1.1.0"
+    "caniuse-lite": "^1.0.30001474",
+    "compass": "^0.1.1",
+    "compass-mixins": "^0.12.12",
+    "flatpickr": "^4.6.13",
+    "gsap": "^3.11.5",
+    "modern-normalize": "^1.1.0",
+    "notiflix": "^3.2.6"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.6.0",
