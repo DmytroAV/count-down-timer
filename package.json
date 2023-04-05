@@ -2,7 +2,7 @@
   "name": "count-down-timer",
   "version": "2.0.0",
   "description": "index.js",
-  "homepage": "https://github.com/DmytroAV/count-down-timer",
+  "homepage": "https://dmytroav.github.io/count-down-timer/",
   "scripts": {
     "start": "parcel src/*.html",
     "build": "parcel build src/*.html --public-url /count-down-timer/"
