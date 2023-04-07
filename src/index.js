@@ -10,14 +10,21 @@ const options = {
   minuteIncrement: 1,
   onClose(selectedDates) {
     const currentDate = new Date();
-
-    if (selectedDates[0] - currentDate > 1000) {
-      refs.btnStartDateTimer.disabled = false;
-    } else {
+    const differenceDate = selectedDates[0] - currentDate;
+    const maxDate_90_day = 7776000000;
+    refs.btnStartDateTimer.disabled = false;
+    if (differenceDate <= 1000) {
       refs.btnStartDateTimer.disabled = true;
       Notify.failure('Please choose a date in the future', {
-        timeout: 1500,
-        width: '400px',
+        timeout: 3000,
+        width: '500px',
+      });
+    }
+    if (differenceDate > maxDate_90_day) {
+      refs.btnStartDateTimer.disabled = true;
+      Notify.failure('Please, the date must not exceed 90 days', {
+        timeout: 3000,
+        width: '500px',
       });
     }
   },
@@ -27,26 +34,21 @@ const options = {
 const refs = {
   inputDateTimer: document.querySelector('#datetime-picker'),
   btnStartDateTimer: document.querySelector('button[data-start]'),
-  countdown: document.querySelector('.countdown'),
   days: document.querySelectorAll('.bloc-time.days .figure'),
   hours: document.querySelectorAll('.bloc-time.hours .figure'),
   minutes: document.querySelectorAll('.bloc-time.min .figure'),
   seconds: document.querySelectorAll('.bloc-time.sec .figure'),
 };
 
-console.log('days :>> ', refs.days);
-console.log('hours :>> ', refs.hours);
-
 const day_1 = refs.days[0];
-console.log('day_1 :>> ', day_1);
 const day_2 = refs.days[1];
-console.log('day_2 :>> ', day_2);
+
 const hour_1 = refs.hours[0];
-console.log('hour_1 :>> ', hour_1);
 const hour_2 = refs.hours[1];
-console.log('hour_2 :>> ', hour_2);
+
 const min_1 = refs.minutes[0];
 const min_2 = refs.minutes[1];
+
 const sec_1 = refs.seconds[0];
 const sec_2 = refs.seconds[1];
 
@@ -165,9 +167,7 @@ function animateFigure(el, value) {
 }
 
 function checkDateTimer(value, el_1, el_2) {
-  console.log('value :>> ', value);
-  console.log('el_1 :>> ', el_1);
-  console.log('el_2 :>> ', el_2);
+
   const val_1 = value.toString().charAt(0);
   const val_2 = value.toString().charAt(1);
   const fig_1_value = el_1.querySelector('.top').innerText;

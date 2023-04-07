@@ -6,13 +6,17 @@ body {
 }
 
 .wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
   position: absolute;
   bottom: 0;
   top: 0;
   left: 0;
   right: 0;
   margin: auto;
-  height: 310px;
+  height: 500px;
 }
 
 a {
@@ -47,14 +51,27 @@ h2 {
   }
 }
 
+// Btn Go back
+
+.goback {
+  margin: 20px;
+  align-self: start;
+}
+
+// Date-time
+
+.date-time {
+  display: flex;
+  align-self: start;
+  margin: 20px;
+}
+
 // Countdown
 .countdown {
-  display: flex;
-  width: 720px;
+  // width: 720px;
   margin: 0 auto;
 
   .bloc-time {
-    display: flex;
     float: left;
     margin-right: 45px;
     text-align: center;
